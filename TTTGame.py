@@ -65,6 +65,8 @@ c.create_line(200,1,200,300)
 c.bind("<Button-1>", callback)
 frame.pack()
 
+#if the command line argument is 1, use the gui
+#if the command line argument is not 1, use the console view
 if (sys.argv[1] == '1'):
 	#using the gui view
 	root.mainloop()
