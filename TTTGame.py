@@ -1,5 +1,24 @@
 from tkinter import *
+#loop to use the console version of the game
 
+#list used to keep the state of the game
+game_arr = [[0 for x in range(3)] for y in range(3)]
+
+def console_game():
+	for x in range(3):
+		for y in range(3):
+			game_arr[x][y] = 'x'
+			print(game_arr[x][y], end='')
+		print('\n')	
+	print('---')
+	game_arr[1][2] = 'o'
+	for x in range(3):
+		for y in range(3):
+			print(game_arr[x][y], end='')
+		print('\n')
+
+
+#loop to use the gui
 root = Tk()
 
 def get_x_quadrant(x):
@@ -46,4 +65,9 @@ c.create_line(200,1,200,300)
 c.bind("<Button-1>", callback)
 frame.pack()
 
-root.mainloop()
+if (sys.argv[1] == '1'):
+	#using the gui view
+	root.mainloop()
+else:
+	#using the console view 
+	console_game()
